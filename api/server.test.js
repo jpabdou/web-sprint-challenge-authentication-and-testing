@@ -81,7 +81,7 @@ describe("auth-router.js; testing auth route endpoints", ()=>{
 
     it('[6] tests for failed login due to non-existant username', async ()=>{
       let res = await request(server).post('/api/auth/login').send({ username: 'gabriel', password: '1234' })
-      expect(res.body.message).toMatch(/username not found/i)
+      expect(res.body.message).toMatch(/invalid credentials/i)
       expect(res.status).toEqual(401)
     }, 750)
   })

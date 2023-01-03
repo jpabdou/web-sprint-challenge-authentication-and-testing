@@ -89,7 +89,5 @@ function createToken(user) {
   return jwt.sign(payload, SECRET, options)
 }
 
-// router.use((err, req, res, next)=>{
-// })
 
 module.exports = router;

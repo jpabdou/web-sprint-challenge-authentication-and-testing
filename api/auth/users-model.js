@@ -41,7 +41,7 @@ const loginVerifyMiddleware = async (req, res, next) =>{
     const {username} = req.body;
     const search = await findBy({username});
     if (!search) {
-        next({status: 401, message: "username not found"});
+        next({status: 401, message: "invalid credentials"});
     } else {
         next();
     }
